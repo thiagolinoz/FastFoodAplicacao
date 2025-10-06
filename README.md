@@ -3,10 +3,19 @@
 ## Stacks utilizadas:
  - Docker
  - Docker-compose
- - Banco de dados - MariaDB
+ - Banco de dados - MySQL Aurora
  - Migration de dados - Flyway
  - Spring boot
  - Swagger
+ - Kubernets
+
+## Pipeline de Deploy
+
+- GitHub Action
+
+ Para utilizar a pipeline é preciso adicionar ao GitHub Secrets as variaveis necessárias da conta AWS que se pretende realizar o deploy da aplicação. 
+ O github realiza o empacotamento do projeto e push, da imagem gerada, no ECR AWS criado no projeto de criação de infraestrutra. O kubernets realiza o pull da imagem mencionada, para realizar o deploy.
+ O trigger do github action é o push no repositório main, porém pode ser realizado ao entrar Action e executar o último job.
 
 ## Ambiente de Desenvolvimento:
 
